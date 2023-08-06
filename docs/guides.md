@@ -1,4 +1,12 @@
-# Developer Guides
+# Use ${MAGISKTMP} to refer to Magisk's tmpfs directory
+
+on early-init
+    setprop sys.example.foo bar
+    insmod ${MAGISKTMP}/libfoo.ko
+    start myservice
+
+service myservice ${MAGISKTMP}/myscript.sh
+    onesho# Developer Guides
 
 ## BusyBox
 
